@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* align-items: left; */
+    align-items:start;
+    outline: red solid 1px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: red;
+    margin-bottom: 20px;
+}
