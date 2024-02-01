@@ -1,0 +1,65 @@
+:root {
+    --bg: #25474D;
+    --bg-dark: #042020;
+    --bg-soft: #164737;
+    --text: #AAABB8;
+    --text-soft: rgb(219, 219, 219)BB8;
+    --text-size_extra_large : 22px;
+    --text-size_large : 22px;
+    --text-size_medium : 16px;
+    --text-size_small : 14px;
+
+}
+
+.navbar{
+    background-color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: green solid 1px;
+    height: 70px;
+    width: 100%;
+}
+
+.logo{
+    color: var(--text);
+    font-size: 30px;
+    font-weight: bold;
+    outline: blue solid 1px;
+
+}
+
+.navbar_links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: pink solid 1px;
+    gap: 20px;
+}
+
+.navbar_link{
+    color: var(--text);
+    font-size: var(--text-size_large);
+    font-weight: bold;
+    outline: yellow solid 1px;
+
+}
+
+.searchBar{
+    padding-right: 20px;
+    width: 200px;
+    outline: rgb(255, 0, 255) solid 1px;
+}
+
+.searchButton{
+    background-color: var(--bg-soft);
+    color: var(--text-soft);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    outline: red solid 1px;
+    text-align: right;
+}

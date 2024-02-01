@@ -1,0 +1,15 @@
+{{ define "main" }}
+<link rel="stylesheet" href="styles/list.css">
+<div class="list_container">
+    <div class="title">
+        <h1>{{ .Title }}</h1>
+    </div>
+    <div class="links">
+        {{ range .Pages }}
+        {{ if and (ne .Title "Contact") (ne .Title "About") }}
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}
