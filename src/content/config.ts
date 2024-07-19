@@ -19,10 +19,12 @@ const projectsCollection = defineCollection({
       }),
       platform: z.string(),
       stack: z.string(),
-      website: z.string(),
-      github: z.string(),
+     github: z.string(),
+     status: z.string(),
     })
 });
+
+type status = 'completed' | 'in-progress' | 'planned' | 'abandoned';
 
 export const collections = {
   projects: projectsCollection,

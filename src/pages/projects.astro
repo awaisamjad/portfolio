@@ -6,8 +6,8 @@ const allProjects = await getCollection("projects");
 const pageTitle = "Projects";
 ---
 <Layout pageTitle={pageTitle}>
-    <h1 class="font-firacode">Projects</h1>
-    <ul role="list" class="link-card-grid">
+    <h1 class="font-firacode mt-10">Projects</h1>
+    <ul role="list" class="link-card-grid justify-center">
         {allProjects.map((card) => <Card 
             url={`/projects/${card.slug}/`} 
             image={card.data.image.url} 
