@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/CVLayout.astro';
+
+---
+<Layout pageTitle="CV">
+
+    <Image
+        class=" my-5"
+        src="/cv1.png"
+        alt="Awais Amjad's CV"
+        width="1000"
+        height="1414"
+    />
+    <Image
+        class=""
+        src="/cv2.png"
+        alt="Awais Amjad's CV"
+        width="1000"
+        height="1414"
+    />
+
+    <a href="/awais_amjad_cv.pdf" download>
+        <button class="btn mt-2">Download CV</button>
+    </a>
+</Layout>
