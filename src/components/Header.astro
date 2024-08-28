@@ -1,0 +1,46 @@
+---
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE } from "@consts";
+---
+
+<header>
+  <Container>
+    <div class="flex flex-wrap gap-y-2 justify-between">
+      <Link href="/" underline={false}>
+        <div class="font-semibold">
+          {SITE.NAME}
+        </div>
+      </Link>
+      <nav class="flex gap-1">
+        <Link href="/blog">
+          blog
+        </Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/work">
+          work
+        </Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/projects">
+          projects
+        </Link>
+        <div class=" mx-5"></div>
+        <Link href="https://github.com/awaisamjad">
+          <img src="/github.svg" alt="GitHub" class="w-5 h-5" />
+        </Link>
+        <div class=" mx-2"></div>
+        <Link href="https://www.linkedin.com/in/awais-amjad-145aa7215/">
+          <img src="/linkedin.svg" alt="LinkedIn" class="w-5 h-5" />
+        </Link>
+        <div class=" mx-2"></div>
+        <Link href={`mailto:${SITE.EMAIL}`}>
+          <img src="/email.svg" alt="Email" class="w-5 h-5" />
+        </Link>
+      </nav>
+    </div>
+  </Container>
+</header>
