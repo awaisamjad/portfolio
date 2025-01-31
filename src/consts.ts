@@ -1,4 +1,4 @@
-import type { Site, Metadata, Socials } from "@types";
+import type { Site, Metadata, Social, Socials } from "@types";
 
 export const SITE: Site = {
   NAME: "Awais Amjad's Portfolio",
@@ -29,16 +29,31 @@ export const PROJECTS: Metadata = {
 };
 
 export const SOCIALS: Socials = [
-  { 
+  {
     NAME: "GitHub",
     HREF: "https://github.com/awaisamjad"
   },
-  { 
+  {
     NAME: "LinkedIn",
-    HREF: "https://www.linkedin.com/in/awais-amjad-145aa7215/",
+    HREF: "https://www.linkedin.com/in/awais-amjad-dev/",
   },
   {
     NAME: "YouTube",
     HREF: "https://www.youtube.com/@awaisamjad5157",
   }
 ];
+
+export const GITHUB: Social = {
+  NAME: "GitHub",
+  HREF: "https://github.com/awaisamjad"
+};
+
+export const LINKEDIN: Social = {
+  NAME: "LinkedIn",
+  HREF: "https://www.linkedin.com/in/awais-amjad-dev/"
+};
+
+export const YOUTUBE: Social = {
+  NAME: "YouTube",
+  HREF: "https://www.youtube.com/@awaisamjad5157"
+};

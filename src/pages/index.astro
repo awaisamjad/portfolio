@@ -5,166 +5,149 @@ import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, HOME, SOCIALS, GITHUB } from "@consts";
 
 const blog = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
+  .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
+const current_projects = (await getCollection("projects"))
+  .filter((project) => project.data.status === 'active')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
 
 const allwork = (await getCollection("work"))
-  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
-  .slice(0,SITE.NUM_WORKS_ON_HOMEPAGE);
+  .sort(
+    (a, b) =>
+      new Date(b.data.dateStart).valueOf() -
+      new Date(a.data.dateStart).valueOf(),
+  )
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
 const work = await Promise.all(
   allwork.map(async (item) => {
     const { Content } = await item.render();
     return { ...item, Content };
-  })
+  }),
 );
-
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <h4 class="animate font-semibold text-black dark:text-white">
-      Hi, I'm Awais Amjad <span class="text-xl">👋🏻</span> 
-    </h4>
+    <h1 class="animate font-semibold text-black dark:text-white">
+      Hi, I'm Awais Amjad ...
+    </h1>
 
     <div class="space-y-16">
       <section>
-        <article class="space-y-4">
+        <div class="mt-7">
           <p class="animate">
-            I am an aspiring software engineer with a passion for learning and building things.
-            I am a self-taught developer with a background in design engineering.
-            Check out my projects for my completed, current, and future projects and the GitHub repository for the source code. 
-            </p>
-        </article>
+            a software engineer with a passion for learning and building things.
+            Check out my <Link href="/projects">projects</Link> to see what I've
+            completed, what I'm currently working on, and what's planned for the
+            future. You can also visit my <Link href=`${GITHUB.HREF}`
+              >GitHub</Link
+            > repository for the source code.
+          </p>
+        </div>
       </section>
 
       <!-- PROJECTS -->
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <p class="animate">
-            Explore my projects to see what i've been working on. 
-          </p>
-          <Link href="/projects">
-            See all projects
-          </Link>
+          <h4 class="animate font-semibold">
+            What I'm currently working on &#8595;
+          </h4>
+          <Link href="/projects"> See all projects </Link>
         </div>
         <ul class="flex flex-col gap-4">
-          {projects.map(project => (
-            <li>
-              <ArrowCard entry={project} />
-            </li>
-          ))}
+          {
+            current_projects.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))
+          }
         </ul>
-      </section>
-
-      <!-- CV -->
-      <section>
-        <article class="space-y-4">
-          <p class="animate">
-            Feel free to take a look at my 
-            <Link href="/cv">CV</Link> for my resume. Scroll down to see my skills, education and interests.
-          </p>
-          
-          <p class="animate">
-            Visit my
-            <Link href="https://github.com/awaisamjad" aria-label="Astro Nano on Github" external>
-              Github
-            </Link>
-            to check out the source code for this 
-            <Link href="https://github.com/awaisamjad/portfolio"> website </Link>
-            and other projects.
-          </p>
-        </article>
       </section>
 
       <!-- WORK EXPERIENCE -->
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
+          <h4 class="font-semibold text-black dark:text-white">
             Work Experience
-          </h5>
-          <Link href="/work">
-            See all work
-          </Link>
+          </h4>
+          <Link href="/work"> See all my experiences </Link>
         </div>
         <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
-            <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
-              </div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))}
+          {
+            work.map((entry) => (
+              <li class="bg-stone-600 rounded p-2">
+                <div class="flex justify-between items-center">
+                  <div class="font-semibold text-black dark:text-white">
+                  {entry.data.company}
+                  </div>
+                  <div class="text-lg font-bold dark:text-white">
+                  {entry.data.role}
+                  </div>
+                  <div class="text-lg opacity-75 italic">
+                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+                  </div>
+                </div>
+                <article>
+                  <entry.Content />
+                </article>
+              </li>
+            ))
+          }
         </ul>
+        <section>
+          <article class="space-y-4">
+            <p class="animate">
+              <strong class="italic">Need a document? </strong>
+              &nbsp;Feel free to take a look at my
+              <Link href="/cv">CV</Link>
+            </p>
+          </article>
+        </section>
       </section>
 
       <!-- POSTS -->
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <p class="animate">
-            Explore my posts for my thoughts on software development and technology. 
+            Explore my posts for my thoughts on software development and
+            technology.
           </p>
-          <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
-          </h5>
-          <Link href="/blog">
-            See all posts
-          </Link>
+          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
+          <Link href="/blog"> See all posts </Link>
         </div>
         <ul class="flex flex-col gap-4">
-          {blog.map(post => (
-            <li>
-              <ArrowCard entry={post} />
-            </li>
-          ))}
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
         </ul>
       </section>
 
       <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          Let's Connect
-        </h5>
+        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
         <article>
           <p>
-            If you want to get in touch with me about something or just to say hi,
-            reach out to my <Link href="https://www.linkedin.com/in/awais-amjad-145aa7215/">LinkedIn</Link> or send me an 
+            If you want to get in touch with me reach out to my <Link
+              href="https://www.linkedin.com/in/awais-amjad-145aa7215/"
+              >LinkedIn</Link
+            > or send me an
             <Link href={`mailto:${SITE.EMAIL}`}>Email</Link>.
           </p>
         </article>
-        <ul class="flex flex-wrap gap-2">
-          {SOCIALS.map(SOCIAL => (
-            <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-              {"/"}
-            </li>
-          ))}
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              {SITE.EMAIL}
-            </Link>
-          </li>
-        </ul>
       </section>
     </div>
+
   </Container>
 </PageLayout>

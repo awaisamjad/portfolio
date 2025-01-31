@@ -1,16 +1,16 @@
 ---
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
-import { SITE } from "@consts";
+import { SITE, GITHUB, LINKEDIN, YOUTUBE } from "@consts";
 ---
 
-<header>
+<header class="">
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
-        <div class="font-semibold">
+      <Link href="/" underline={false} >
+        <h4 class="font-semibold">
           {SITE.NAME}
-        </div>
+        </h4>
       </Link>
       <nav class="flex gap-1">
         <Link href="/blog">
@@ -29,19 +29,19 @@ import { SITE } from "@consts";
           projects
         </Link>
         <div class=" mx-5"></div>
-        <Link href="https://github.com/awaisamjad">
+        <Link href=`${GITHUB.HREF}` external>
           <img src="/github.svg" alt="GitHub" class="w-5 h-5" />
         </Link>
         <div class=" mx-2"></div>
-        <Link href="https://www.linkedin.com/in/awais-amjad-145aa7215/">
+        <Link href=`${LINKEDIN.HREF}` external>
           <img src="/linkedin.svg" alt="LinkedIn" class="w-[22px] h-[22px]" />
         </Link>
         <div class=" mx-2"></div>
-        <Link href="/">
+        <Link href=`${YOUTUBE.HREF}` external>
           <img src="/youtube.svg" alt="LinkedIn" class="w-6 h-6" />
         </Link>
         <div class=" mx-2"></div>
-        <Link href={`mailto:${SITE.EMAIL}`}>
+        <Link href={`mailto:${SITE.EMAIL}`} external>
           <img src="/email.svg" alt="Email" class="w-[22px] h-[22px]" />
         </Link>
       </nav>
