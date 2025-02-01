@@ -9,20 +9,22 @@ const { date } = Astro.props;
 <time
   datetime={(function () {
     try {
-      return date.toISOString();
+      return date ? date.toISOString() : '';
     } catch (e) {
-      return date.toString();
+      return date ? date.toString() : '';
     }
   })()}
 >
   {
-    typeof date === "string"
-      ? date
-      : date.toLocaleDateString("en-GB", {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-          timeZone: "Europe/London"
-        })
+    date
+      ? (typeof date === "string"
+        ? date
+        : date.toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+            timeZone: "Europe/London"
+          }))
+      : 'Invalid date'
   }
 </time>
