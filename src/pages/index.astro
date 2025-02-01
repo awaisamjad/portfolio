@@ -13,8 +13,13 @@ const blog = (await getCollection("blog"))
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const current_projects = (await getCollection("projects"))
-  .filter((project) => project.data.status === 'active')
+  .filter((project) => project.data.status === "active")
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
+const current_work = (await getCollection("work"))
+  .filter((project) => project.data.status === "active")
+  // .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
 
@@ -54,13 +59,30 @@ const work = await Promise.all(
         </div>
       </section>
 
+      <!-- CURRENT WORK EXPERIENCE -->
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h4 class="animate font-semibold">
+            What freelance project I'm currently working on &#8595;
+          </h4>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {
+            current_work.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))
+          }
+        </ul>
+        <Link href="/projects"> See all projects </Link>
+      </section>
       <!-- PROJECTS -->
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h4 class="animate font-semibold">
-            What I'm currently working on &#8595;
+            What side project I'm currently working on &#8595;
           </h4>
-          <Link href="/projects"> See all projects </Link>
         </div>
         <ul class="flex flex-col gap-4">
           {
@@ -71,6 +93,7 @@ const work = await Promise.all(
             ))
           }
         </ul>
+        <Link href="/projects"> See all projects </Link>
       </section>
 
       <!-- WORK EXPERIENCE -->
@@ -84,16 +107,16 @@ const work = await Promise.all(
         <ul class="flex flex-col space-y-4">
           {
             work.map((entry) => (
-              <li class="bg-stone-600 rounded p-2">
+              <li class="bg-white dark:bg-stone-600 rounded p-2">
                 <div class="flex justify-between items-center">
                   <div class="font-semibold text-black dark:text-white">
-                  {entry.data.company}
+                    {entry.data.company}
                   </div>
                   <div class="text-lg font-bold dark:text-white">
-                  {entry.data.role}
+                    {entry.data.role}
                   </div>
                   <div class="text-lg opacity-75 italic">
-                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+                    {dateRange(entry.data.dateStart, entry.data.dateEnd)}
                   </div>
                 </div>
                 <article>
@@ -148,6 +171,5 @@ const work = await Promise.all(
         </article>
       </section>
     </div>
-
   </Container>
 </PageLayout>

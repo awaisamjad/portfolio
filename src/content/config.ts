@@ -15,8 +15,11 @@ const work = defineCollection({
   schema: z.object({
     company: z.string(),
     role: z.string(),
-    dateStart: z.coerce.date(),
-    dateEnd: z.union([z.coerce.date(), z.string()]),
+    title: z.string().optional(),
+    dateStart: z.coerce.date().optional(),
+    dateEnd: z.union([z.coerce.date(), z.string()]).optional(),
+    url: z.string().optional(),
+    status: z.enum(["active", "completed"]).optional(),
   }),
 });
 
@@ -30,7 +33,7 @@ const projects = defineCollection({
     demoURL: z.string().optional(),
     repoURL: z.string().optional(),
     status: z.enum(["active", "dropped", "completed", "will-reattempt"]),
-    project_type : z.enum(['professional', 'hobby'])
+    project_type: z.enum(['professional', 'hobby'])
   }),
 });
 
