@@ -41,7 +41,7 @@ const work = await Promise.all(
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <h1 class="animate font-semibold text-black dark:text-white">
+    <h1 class="animate font-semibold ">
       Hi, I'm Awais Amjad ...
     </h1>
 
@@ -75,7 +75,7 @@ const work = await Promise.all(
             ))
           }
         </ul>
-        <Link href="/projects"> See all projects </Link>
+        <Link href="/work"> See all work </Link>
       </section>
       <!-- PROJECTS -->
       <section class="animate space-y-6">
@@ -96,56 +96,12 @@ const work = await Promise.all(
         <Link href="/projects"> See all projects </Link>
       </section>
 
-      <!-- WORK EXPERIENCE -->
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h4 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h4>
-          <Link href="/work"> See all my experiences </Link>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          {
-            work.map((entry) => (
-              <li class="bg-white dark:bg-stone-600 rounded p-2">
-                <div class="flex justify-between items-center">
-                  <div class="font-semibold text-black dark:text-white">
-                    {entry.data.company}
-                  </div>
-                  <div class="text-lg font-bold dark:text-white">
-                    {entry.data.role}
-                  </div>
-                  <div class="text-lg opacity-75 italic">
-                    {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-                  </div>
-                </div>
-                <article>
-                  <entry.Content />
-                </article>
-              </li>
-            ))
-          }
-        </ul>
-        <section>
-          <article class="space-y-4">
-            <p class="animate">
-              <strong class="italic">Need a document? </strong>
-              &nbsp;Feel free to take a look at my
-              <Link href="/cv">CV</Link>
-            </p>
-          </article>
-        </section>
-      </section>
+      
 
       <!-- POSTS -->
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <p class="animate">
-            Explore my posts for my thoughts on software development and
-            technology.
-          </p>
-          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
-          <Link href="/blog"> See all posts </Link>
+          <h5 class="font-semibold">Latest Posts &#8595;</h5>
         </div>
         <ul class="flex flex-col gap-4">
           {
@@ -156,10 +112,11 @@ const work = await Promise.all(
             ))
           }
         </ul>
+        <Link href="/blog"> See all posts </Link>
       </section>
 
       <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+        <h5 class="font-semibold">Let's Connect</h5>
         <article>
           <p>
             If you want to get in touch with me reach out to my <Link

@@ -4,27 +4,35 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
+import Link from "@components/Link.astro";
 
-const work = (await getCollection("work"))
-  // .filter(project => !project.data.draft)
-  // .sort((a, b) => b.data.dateEnd.valueOf() - a.data.dateEnd.valueOf());
+const work = await getCollection("work");
+// .filter(project => !project.data.draft)
+// .sort((a, b) => b.data.dateEnd.valueOf() - a.data.dateEnd.valueOf());
 ---
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
   <Container>
-    <div class="space-y-10 my-10">
-      <h3 class="animate font-semibold text-black dark:text-white">
-        Work
-      </div>
+    <div class="space-y-10">
+      <h3 class="animate font-semibold text-black dark:text-white">Work</h3>
       <ul class="animate flex flex-col gap-4">
         {
           work.map((project) => (
             <li>
-              <ArrowCard entry={project}/>
+              <ArrowCard entry={project} />
             </li>
           ))
         }
       </ul>
     </div>
+    <section>
+      <article class="space-y-4">
+        <p class="animate">
+          <strong class="italic">Need a document? </strong>
+          &nbsp;Feel free to take a look at my
+          <Link href="/cv">CV</Link>
+        </p>
+      </article>
+    </section>
   </Container>
 </PageLayout>
