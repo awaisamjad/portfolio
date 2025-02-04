@@ -26,14 +26,22 @@ const current_work = (await getCollection("work"))
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <h1 class="animate font-semibold ">
-      Hi, I'm Awais Amjad ...
+      About Me
     </h1>
 
     <div class="space-y-16">
       <section>
         <div class="mt-7">
+          <ul class="animate">
+            <p class=" font-bold">I love working on low level code and backend</p>
+            <p class=" font-bold">Favourite languages : C, Rust, Go</p>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="mt-7">
           <p class="animate">
-            a software engineer with a passion for learning and building things.
+            
             Check out my <Link href="/projects">projects</Link> to see what I've
             completed, what I'm currently working on, and what's planned for the
             future. You can also visit my <Link href=`${GITHUB.HREF}`
