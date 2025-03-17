@@ -2,42 +2,45 @@
 
 export const GLOBAL = {
   // Site metadata
-  username: "Zaggonaut",
-  rootUrl: "https://zaggonaut.dev",
-  shortDescription: "Retro-Inspired Theme &<br /> Built for Astro",
-  longDescription: "Zaggonaut is a retro-inspired theme for Astro, built using TypeScript, TailwindCSS, and Astro.",
+  username: "Awais Amjad",
+  rootUrl: "https://awaisamjad.dev",
+  shortDescription: "Awais Amjad's Website",
+  longDescription: "My website where you can find my latest projects, blog posts and experiences",
   
   // Social media links
-  githubProfile: "https://github.com/RATIU5/zaggonaut",
-  twitterProfile: "https://twitter.com/",
-  linkedinProfile: "https://www.linkedin.com/",
+  githubProfile: "https://github.com/awaisamjad",
+  linkedinProfile: "https://www.linkedin.com/in/awais-amjad-dev",
   
   // Common text names used throughout the site
   articlesName: "Articles",
   projectsName: "Projects",
+  workName: "Work",
   viewAll: "View All",
   
   // Common descriptions used throughout the site
   noArticles: "No featured articles yet.",
   noProjects: "No featured projects yet.",
+  noWork: "No Work yet.",
 
   // Blog metadata
   blogTitle: "My Thoughts & Takes",
-  blogShortDescription: "Practical wisdom, unfiltered thoughts, and hot takes.",
-  blogLongDescription: "Web development, tech trends, and the occasional programming mishap.",
+  blogShortDescription: "Thoughts",
+  blogLongDescription: "",
 
   // Project metadata
   projectTitle: "Projects and Code",
-  projectShortDescription: "A list of my web development projects and developer tools.",
-  projectLongDescription: "All of my projects, including both frontend and full-stack applications.",
+  projectShortDescription: "A list of my development projects and developer tools.",
+  projectLongDescription: "",
 
-  // Profile image
-  profileImage: "michael-dam-unsplash.webp",
+  workTitle: "Jobs and Experience",
+  workShortDescription: "A list of my past jobs and experiences",
+  workLongDescription: "",
+
 
   // Menu items
   menu: {
-    home: "/",
     projects: "/projects",
     blog: "/blog",
+    work : "/work"
   }
 };

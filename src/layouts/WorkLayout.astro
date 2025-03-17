@@ -1,6 +1,6 @@
 ---
 import { getShortDescription, generateSourceUrl } from "../lib/utils";
-import type { ProjectFrontmatter } from "../lib/types";
+import type { WorkFrontmatter } from "../lib/types";
 import type { MarkdownLayoutProps } from "astro";
 import Prose from "../components/Prose.astro";
 import Layout from "./Layout.astro";
@@ -9,11 +9,11 @@ import Anchor from "../components/common/Anchor.astro";
 import { GLOBAL } from "../lib/variables";
 
 
-type Props = MarkdownLayoutProps<ProjectFrontmatter>;
+type Props = MarkdownLayoutProps<WorkFrontmatter>;
 
 const { frontmatter } = Astro.props;
 const shortDescription = getShortDescription(frontmatter.description);
-const sourceUrl = generateSourceUrl(frontmatter.filename, "projects");
+const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
 ---
 
 <Layout>
@@ -44,13 +44,6 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "projects");
         }
       </div>
       <div class="flex gap-2">
-        {
-          frontmatter.githubUrl ? (
-            <Anchor url={frontmatter.githubUrl} class="text-base" external>
-              GitHub
-            </Anchor>
-          ) : null
-        }
         {
           frontmatter.liveUrl ? (
             <Anchor url={frontmatter.liveUrl} class="text-base" external>

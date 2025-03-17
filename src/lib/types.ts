@@ -81,3 +81,39 @@ export type ArticleFrontmatter = {
    */
   filename: string;
 };
+
+
+export type WorkFrontmatter = {
+  /**
+   * Job Title
+   */
+  title: string;
+
+  /**
+   * Description of job
+   */
+  description: string;
+
+  /**
+   * The tags of the article
+   * (eg. ["JavaScript", "React", "Node.js"])
+   */
+  tags?: string[];
+
+  /**
+   * Whether the job should be featured on the homepage
+   */
+  featured: boolean;
+
+  liveUrl?: string;
+
+  /**
+   * The timestamp the article was published in W3C format
+   */
+  timestamp: string;
+
+  /**
+   * The URL of the article on the website
+   */
+  filename: string;
+};

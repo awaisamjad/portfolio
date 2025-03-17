@@ -31,7 +31,6 @@
 
 @theme {
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --font-display: "press-start-2p", ui-monospace, monospace;
   --font-serif: "Literata Variable", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --color-zag-dark: var(--color-neutral-900);
   --color-zag-light: var(--color-neutral-100);
@@ -43,33 +42,50 @@
   --color-zag-accent-dark-muted: var(--color-emerald-800);
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
 @layer base {
   :root {
     --zag-stroke: 2px;
     --zag-offset: 6px;
-    --zag-transition-duration: 0.15s;
-    --zag-transition-timing-function: ease-in-out;
+    ---duration: 0.15s;
+    ---timing-function: ease-in-out;
   }
 
-  .zag-transition {
-    @media (prefers-reduced-motion: no-preference) {
-      transition:
-        background-color var(--zag-transition-duration) var(--zag-transition-timing-function),
-        color var(--zag-transition-duration) var(--zag-transition-timing-function),
-        fill var(--zag-transition-duration) var(--zag-transition-timing-function),
-        border-color var(--zag-transition-duration) var(--zag-transition-timing-function),
-        transform var(--zag-transition-duration) var(--zag-transition-timing-function);
-    }
-  }
-
-  .zag-bg {
+  .bg {
     background-color: var(--color-zag-light);
     :where(.dark, .dark *) & {
       background-color: var(--color-zag-dark);
     }
   }
 
-  .-zag-bg {
+  .-bg {
     background-color: var(--color-zag-dark);
     :where(.dark, .dark *) & {
       background-color: var(--color-zag-light);

@@ -2,7 +2,6 @@
 import { featuredArticles, featuredProjects } from "../lib/featured";
 import { GLOBAL } from "../lib/variables";
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/home/Hero.astro";
 import Section from "../components/common/Section.astro";
 import FeaturedProjects from "../components/home/FeaturedProjects.astro";
 import FeaturedArticles from "../components/home/FeaturedArticles.astro";
@@ -11,36 +10,32 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
 <Layout>
   <Fragment slot="head">
     <title>{GLOBAL.username} • {GLOBAL.shortDescription}</title>
-    <meta
-      name="description"
-      content={GLOBAL.longDescription}
-    />
-    <meta
-      property="og:title"
-      content={`${GLOBAL.username} • ${GLOBAL.shortDescription}`}
-    />
-    <meta
-      property="og:description"
-      content={GLOBAL.longDescription}
-    />
-    <meta property="og:image" content={`${GLOBAL.rootUrl}/zaggonaut.png`} /> 
+    <meta name="description" content={GLOBAL.longDescription} />
+    <meta property="og:title" content={`${GLOBAL.username}`} />
+    <meta property="og:description" content={GLOBAL.longDescription} />
     <meta property="og:url" content={GLOBAL.rootUrl} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content={`${GLOBAL.username} • ${GLOBAL.shortDescription}`}
-    />
-    <meta
-      name="twitter:description"
-      content={GLOBAL.longDescription}
-    />
-    <meta name="twitter:image" content={`${GLOBAL.rootUrl}/zaggonaut.png`} />
     <meta http-equiv="content-language" content="en" />
     <meta name="language" content="English" />
     <link rel="canonical" href={GLOBAL.rootUrl} />
   </Fragment>
-  <Section class="my-16">
-    <Hero />
+  <Section class="mt-4">
+    <div class="flex flex-col">
+      <h1
+        class="text-3xl sm:text-4xl font-display font-semibold opsz text-left"
+      >
+        {GLOBAL.username}
+      </h1>
+      <ul class="mt-2 space-y-1 text-zinc-700 dark:text-zinc-400 list-disc">
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Software Developer</span>
+        </li>
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Design Engineering Graduate</span>
+        </li>
+      </ul>
+    </div>
   </Section>
   <Section>
     <FeaturedProjects featuredProjects={featuredProjects} />

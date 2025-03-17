@@ -1,0 +1,46 @@
+---
+import { work } from "../../lib/list";
+import Section from "../../components/common/Section.astro";
+import WorkSnippet from "../../components/WorkSnippet.astro";
+import Layout from "../../layouts/Layout.astro";
+import { GLOBAL } from "../../lib/variables";
+---
+
+<Layout>
+  <Fragment slot="head">
+    <title>{GLOBAL.workTitle} • {GLOBAL.username}</title>
+    <meta
+      name="description"
+      content={GLOBAL.workLongDescription}
+    />
+    <meta property="og:title" content={`${GLOBAL.projectTitle} • ${GLOBAL.username}`} />
+    <meta
+      property="og:description"
+      content={GLOBAL.workShortDescription}
+    />
+    <meta property="og:url" content={`${GLOBAL.rootUrl}/work`} />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href={`${GLOBAL.rootUrl}/work`} />
+  </Fragment>
+  <Section class="py-4 my-8">
+    <div class="flex items-center gap-4 pt-8 pb-16">
+      <h1 class="font-display text-3xl sm:text-4xl leading-loose">{GLOBAL.workName}</h1>
+    </div>
+    <ul>
+      {
+        work.map((job) => (
+          <li>
+            <WorkSnippet
+              title={job.title}
+              description={job.description}
+              url={job.filename}
+              liveUrl={job.liveUrl}
+              tags={job.tags ?? []}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+</Layout>
