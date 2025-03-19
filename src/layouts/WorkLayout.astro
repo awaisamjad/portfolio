@@ -52,6 +52,8 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
           ) : null
         }
       </div>
+      <div class="">{frontmatter.monthStart} {frontmatter.yearStart} - 
+        {frontmatter.monthEnd ? `${frontmatter.monthEnd} ${frontmatter.yearEnd}` : 'Present'}</div>
     </div>
     <Prose>
       <slot />

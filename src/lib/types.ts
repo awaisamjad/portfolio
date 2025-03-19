@@ -82,6 +82,9 @@ export type ArticleFrontmatter = {
   filename: string;
 };
 
+export type Month =
+  "January" | "February" | "March" | "April" | "May" | "June" | "July" | "August" | "September" | "October" | "November" | "December"
+
 
 export type WorkFrontmatter = {
   /**
@@ -106,11 +109,17 @@ export type WorkFrontmatter = {
   featured: boolean;
 
   liveUrl?: string;
+  githubUrl?: string;
 
-  /**
-   * The timestamp the article was published in W3C format
-   */
-  timestamp: string;
+  monthStart?: string;
+
+  monthEnd?: string;
+
+  yearStart?: number;
+
+  yearEnd?: number;
+  url : string;
+
 
   /**
    * The URL of the article on the website

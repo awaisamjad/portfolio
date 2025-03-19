@@ -1,5 +1,7 @@
 ---
 import Anchor from "./common/Anchor.astro";
+import type { Month, WorkFrontmatter } from "../lib/types";
+import type { MarkdownLayoutProps } from "astro";
 
 export type Props = {
   title: string;
@@ -7,15 +9,22 @@ export type Props = {
   url: string;
   githubUrl?: string;
   liveUrl?: string;
+  monthStart?: string;
+  monthEnd?: string;
+  yearStart?: number;
+  yearEnd?: number;
   tags: string[];
 };
 
-const { title, description, url, githubUrl, liveUrl, tags } = Astro.props;
+const { title, description, url, githubUrl, liveUrl, tags, monthEnd, monthStart, yearEnd, yearStart } = Astro.props;
+// type Props = MarkdownLayoutProps<WorkFrontmatter>;
+
+// const { frontmatter } = Astro.props;
 ---
 
 <div class="flex flex-col gap-3 pb-8">
   <div class="flex flex-col gap-3 sm:flex-row sm:justify-between">
-    <Anchor url={url} class="text-xl">
+    <Anchor url={url ?? ''} class="text-xl">
       {title}
     </Anchor>
     <div class="flex gap-2">
@@ -35,7 +44,7 @@ const { title, description, url, githubUrl, liveUrl, tags } = Astro.props;
       }
     </div>
   </div>
-  <p class="zag-text ">
+  <p class="zag-text">
     {description}
   </p>
   <div class="flex flex-row wrap gap-2">

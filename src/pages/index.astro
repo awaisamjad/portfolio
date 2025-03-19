@@ -1,5 +1,5 @@
 ---
-import { featuredArticles, featuredProjects } from "../lib/featured";
+import { featuredArticles, featuredProjects, featuredWork } from "../lib/featured";
 import { GLOBAL } from "../lib/variables";
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/common/Section.astro";
@@ -40,7 +40,12 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
   <Section>
     <FeaturedProjects featuredProjects={featuredProjects} />
   </Section>
+
   <Section>
     <FeaturedArticles featuredArticles={featuredArticles} />
   </Section>
+
+  <!-- <Section>
+    <FeaturedWork featuredWork={featuredWork} />
+  </Section> -->
 </Layout>
