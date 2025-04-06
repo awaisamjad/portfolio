@@ -6,7 +6,7 @@ tags: ["SvelteKit", "Tailwind CSS", "TypeScript", "Supabase", "Netlify"]
 featured: true
 liveUrl: https://ouafi.netlify.app
 timestamp: 2024-12-16T02:39:03Z
-ffilename: zahrour
+filename: zahrour
 --- 
 
 - Currently developing an e-commerce website for a clothing line.

@@ -67,7 +67,7 @@ export const featuredWork = (
         tags: data.frontmatter.tags,
         featured: data.frontmatter.featured,
         timestamp: data.frontmatter.timestamp,
-        filename: `/blog/${data.frontmatter.filename}`,
+        filename: `/work/${data.frontmatter.filename}`,
       };
     },
   )
