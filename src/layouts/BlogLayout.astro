@@ -1,6 +1,6 @@
 ---
 import Section from "../components/common/Section.astro";
-import type { ArticleFrontmatter } from "../lib/types";
+import type { BlogFrontmatter } from "../lib/types";
 import {
   getShortDescription,
   processArticleDate,
@@ -11,11 +11,11 @@ import type { MarkdownLayoutProps } from "astro";
 import Prose from "../components/Prose.astro";
 import Layout from "./Layout.astro";
 
-type Props = MarkdownLayoutProps<ArticleFrontmatter>;
+type Props = MarkdownLayoutProps<BlogFrontmatter>;
 
 const { frontmatter } = Astro.props;
+const date = processArticleDate(frontmatter.timestamp);
 const shortDescription = getShortDescription(frontmatter.description);
-const articleDate = processArticleDate(frontmatter.timestamp);
 const sourceUrl = generateSourceUrl(frontmatter.filename, "blog");
 ---
 
@@ -23,7 +23,10 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "blog");
   <Fragment slot="head">
     <title>{frontmatter.title} • {GLOBAL.username}</title>
     <meta name="description" content={frontmatter.description} />
-    <meta property="og:title" content={`${frontmatter.title} • ${GLOBAL.username}`} />
+    <meta
+      property="og:title"
+      content={`${frontmatter.title} • ${GLOBAL.username}`}
+    />
     <meta property="og:description" content={shortDescription} />
     <meta property="og:url" content={frontmatter.url} />
     <meta http-equiv="content-language" content="en" />
@@ -38,13 +41,12 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "blog");
         {frontmatter.title}
       </h1>
       <div class="flex justify-between">
-        <span>{articleDate}</span>
+        <span>{date}</span>
         <span>{frontmatter.time} min</span>
       </div>
     </div>
     <Prose>
       <slot />
     </Prose>
-    <p class="pt-8">~{GLOBAL.username}</p>
   </Section>
 </Layout>

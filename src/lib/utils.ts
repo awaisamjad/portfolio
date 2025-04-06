@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import { GLOBAL } from "./variables";
+import type { CustomDate } from "./types";
 
 type MarkdownData<T extends object> = {
   frontmatter: T;
@@ -99,4 +100,22 @@ export const generateSourceUrl = (
   contentType: "projects" | "blog" | "work",
 ) => {
   return `${GLOBAL.rootUrl}/${contentType}/${sourceUrl}`;
+};
+
+
+export const sortByCustomDate = (a: CustomDate, b: CustomDate): number => {
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  if (a.year !== b.year) {
+    return b.year - a.year;
+  }
+  
+  if (a.month !== b.month) {
+    return months.indexOf(b.month) - months.indexOf(a.month);
+  }
+
+  return b.day - a.day;
 };

@@ -1,8 +1,8 @@
-import type { ArticleFrontmatter, ProjectFrontmatter, WorkFrontmatter } from "./types";
+import type { BlogFrontMatter, ProjectFrontmatter, WorkFrontmatter } from "./types";
 import { getShortDescription, processContentInDir } from "./utils";
 
 export const articles = (
-  await processContentInDir<ArticleFrontmatter, ArticleFrontmatter>(
+  await processContentInDir<BlogFrontMatter, BlogFrontMatter>(
     "blog",
     (data) => {
       const shortDescription = getShortDescription(

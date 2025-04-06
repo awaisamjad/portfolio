@@ -1,5 +1,9 @@
 ---
-import { getShortDescription, generateSourceUrl } from "../lib/utils";
+import {
+  getShortDescription,
+  generateSourceUrl,
+  processArticleDate,
+} from "../lib/utils";
 import type { WorkFrontmatter } from "../lib/types";
 import type { MarkdownLayoutProps } from "astro";
 import Prose from "../components/Prose.astro";
@@ -8,10 +12,10 @@ import Section from "../components/common/Section.astro";
 import Anchor from "../components/common/Anchor.astro";
 import { GLOBAL } from "../lib/variables";
 
-
 type Props = MarkdownLayoutProps<WorkFrontmatter>;
 
 const { frontmatter } = Astro.props;
+const date = processArticleDate(frontmatter.timestamp);
 const shortDescription = getShortDescription(frontmatter.description);
 const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
 ---
@@ -20,7 +24,10 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
   <Fragment slot="head">
     <title>{frontmatter.title} • {GLOBAL.username}</title>
     <meta name="description" content={frontmatter.description} />
-    <meta property="og:title" content={`${frontmatter.title} • ${GLOBAL.username}`} />
+    <meta
+      property="og:title"
+      content={`${frontmatter.title} • ${GLOBAL.username}`}
+    />
     <meta property="og:description" content={shortDescription} />
     <meta property="og:url" content={frontmatter.url} />
     <meta http-equiv="content-language" content="en" />
@@ -32,6 +39,9 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
       <h1 class="text-3xl sm:text-4xl leading-tight font-display">
         {frontmatter.title}
       </h1>
+      <div class="flex justify-between">
+        <span>{date}</span>
+      </div>
       <div class="flex text-sm gap-2">
         {
           frontmatter.tags
@@ -52,8 +62,6 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
           ) : null
         }
       </div>
-      <div class="">{frontmatter.monthStart} {frontmatter.yearStart} - 
-        {frontmatter.monthEnd ? `${frontmatter.monthEnd} ${frontmatter.yearEnd}` : 'Present'}</div>
     </div>
     <Prose>
       <slot />

@@ -1,0 +1,13 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: My Home Server
+description: An overview of my home server
+tags: ["home server", "linux"]
+time: 2
+featured: true
+timestamp: 2025-03-16T02:39:03Z
+filename: home-server
+---
+
+I plan to build a home server with my old PC
+

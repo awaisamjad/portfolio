@@ -5,12 +5,8 @@ description: Revamped Acument Group's landing page
 tags: ["HTML", "SCSS", "JavaScript", "Strapi", "Vercel"]
 featured: true
 liveUrl: https://acument.group
-timestamp: string
 filename: acument
-monthStart: May
-yearStart: 2024
-monthEnd: September
-yearEnd: 2024
+timestamp: 2025-03-16T02:39:03Z
 --- 
 
 - Revamped client's website using **HTML**, **SCSS**, **JavaScript**, **Node.js**, and **HTMX**, achieving a 40% traffic increase and improved user experience.

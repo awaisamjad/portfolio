@@ -43,7 +43,7 @@ export type ProjectFrontmatter = {
   filename: string;
 };
 
-export type ArticleFrontmatter = {
+export type BlogFrontmatter = {
   /**
    * The title of the article
    */
@@ -63,24 +63,23 @@ export type ArticleFrontmatter = {
   /**
    * The estimated time to read the article in minutes
    */
-  time: number;
+  time?: number;
 
   /**
    * Whether the article should be featured on the homepage
    */
   featured: boolean;
 
-  /**
-   * The timestamp the article was published in W3C format
-   */
   timestamp: string;
-
-  /**
-   * The URL of the article on the website
-   * (eg. https://zaggonaut.dev/blog/my-article)
-   */
+  
   filename: string;
 };
+
+export type CustomDate = {
+  day : number;
+  month : Month;
+  year : number
+}
 
 export type Month =
   "January" | "February" | "March" | "April" | "May" | "June" | "July" | "August" | "September" | "October" | "November" | "December"
@@ -109,20 +108,10 @@ export type WorkFrontmatter = {
   featured: boolean;
 
   liveUrl?: string;
+
   githubUrl?: string;
 
-  monthStart?: string;
+  timestamp: string;
 
-  monthEnd?: string;
-
-  yearStart?: number;
-
-  yearEnd?: number;
-  url : string;
-
-
-  /**
-   * The URL of the article on the website
-   */
   filename: string;
 };

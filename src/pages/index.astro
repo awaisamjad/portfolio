@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Section from "../components/common/Section.astro";
 import FeaturedProjects from "../components/home/FeaturedProjects.astro";
 import FeaturedArticles from "../components/home/FeaturedArticles.astro";
+import FeaturedWork from "../components/home/FeaturedWork.astro";
 ---
 
 <Layout>
@@ -37,6 +38,11 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
       </ul>
     </div>
   </Section>
+
+  <Section>
+    <FeaturedWork featuredWork={featuredWork} />
+  </Section>
+
   <Section>
     <FeaturedProjects featuredProjects={featuredProjects} />
   </Section>
@@ -45,7 +51,4 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
     <FeaturedArticles featuredArticles={featuredArticles} />
   </Section>
 
-  <!-- <Section>
-    <FeaturedWork featuredWork={featuredWork} />
-  </Section> -->
 </Layout>
