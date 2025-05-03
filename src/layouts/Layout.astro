@@ -16,9 +16,20 @@ import "../styles/global.css";
       href="https://fonts.bunny.net/css?family=ibm-plex-mono:400,400i,500,500i,600,600i,700,700i"
       rel="stylesheet"
     />
+    <!-- Cronitor RUM -->
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+      window.cronitor =
+        window.cronitor ||
+        function () {
+          (window.cronitor.q = window.cronitor.q || []).push(arguments);
+        };
+      cronitor("config", { clientKey: "469803078db254f89302af54e35dcfb4" });
+    </script>
+
     <slot name="head" />
   </head>
-  <body class="bg zag-text  font-mono">
+  <body class="bg zag-text font-mono">
     <Header />
     <main>
       <slot />
