@@ -26,8 +26,8 @@ import ThemeToggle from "./ThemeToggle.astro";
     >
       <Anchor url="/" class="text-2xl font-extrabold">HOME</Anchor>
       {
-        Object.entries(GLOBAL.menu).map((i) => (
-          <Anchor url={i[1]}>{i[0]}</Anchor>
+        ['projects', 'blog', 'work'].map((item) => (
+          <Anchor url={`/${item}`}>{item}</Anchor>
         ))
       }
     </div>

@@ -42,41 +42,46 @@ import List from "../components/List.astro";
   <Section>
     <div class="flex flex-col pb-4">
       <h4 class="font-bold">What I'm currently learning / doing</h4>
-      <List
-        items={[
-          "Machine Learning & AI",
-          "Network Programming",
-          "Data Structures & Algorithms",
-          "'Writing an Interpreter in Go' by Thorsten Ball",
-          "Arabic",
-          "Reading 'Code: The Hidden Language' and 'Pro Git'"
-        ]}
-      />
+      <ul class="mt-2 space-y-1 text-black dark:text-white list-disc">
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Machine Learning and AI</span>
+        </li>
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Network Programming</span>
+        </li>
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>'Writing an Interpreter in Go' by Thorsten Ball</span>
+        </li>
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>nand2tetris</span>
+        </li>
+      </ul>
     </div>
+  </Section>
+  <Section>
+    <div class="flex flex-col pb-4">
+      <h4 class="font-bold">What I'm planning to do in the future</h4>
+      <ul class="mt-2 space-y-1 text-black dark:text-white list-disc">
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Build a home server</span>
+        </li>
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Build an 8-bit computer</span>
+        </li>
+      </ul>
+    </div>
+  </Section>
+  <Section>
+    <FeaturedProjects featuredProjects={featuredProjects} />
+  </Section>
 
-    <Section>
-      <div class="flex flex-col pb-4">
-        <h4 class="font-bold">What I plan to do</h4>
-        <List
-          items={[
-            "Build a home server",
-            "Start & complete nand2tetris",
-            "Learn more about Computer Engineering",
-          ]}
-        />
-      </div>
-
-      <Section>
-        <FeaturedWork featuredWork={featuredWork} />
-      </Section>
-
-      <Section>
-        <FeaturedProjects featuredProjects={featuredProjects} />
-      </Section>
-
-      <Section>
-        <FeaturedArticles featuredArticles={featuredArticles} />
-      </Section>
-    </Section>
-  </Section></Layout
->
+  <Section>
+    <FeaturedArticles featuredArticles={featuredArticles} />
+  </Section>
+</Layout>

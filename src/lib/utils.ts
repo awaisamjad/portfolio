@@ -1,13 +1,11 @@
 import fs from "node:fs/promises";
 import { GLOBAL } from "./variables";
-import type { CustomDate } from "./types";
 
 type MarkdownData<T extends object> = {
   frontmatter: T;
   file: string;
   url: string;
 };
-
 
 /**
  * This function processes the content of a directory and returns an array of processed content.
@@ -25,34 +23,38 @@ export const processContentInDir = async <T extends object, K>(
   dir: string = process.cwd(),
 ) => {
   const files = await fs.readdir(dir + `/src/pages/${contentType}`);
+  
   const markdownFiles = files
     .filter((file: string) => file.endsWith(".md"))
     .map((file) => file.split(".")[0]);
+
   const readMdFileContent = async (file: string) => {
     if (contentType === "projects") {
       const content = import.meta
         .glob(`/src/pages/projects/*.md`)
-        [`/src/pages/projects/${file}.md`]();
+      [`/src/pages/projects/${file}.md`]();
       const data = (await content) as {
         frontmatter: T;
         file: string;
         url: string;
       };
       return processFn(data);
-    } else if(contentType === "blog"){
+    } 
+    else if (contentType === "blog") {
       const content = import.meta
         .glob(`/src/pages/blog/*.md`)
-        [`/src/pages/blog/${file}.md`]();
+      [`/src/pages/blog/${file}.md`]();
       const data = (await content) as {
         frontmatter: T;
         file: string;
         url: string;
       };
       return processFn(data);
-    } else {
+    } 
+    else if (contentType === "work") {
       const content = import.meta
         .glob(`/src/pages/work/*.md`)
-        [`/src/pages/work/${file}.md`]();
+      [`/src/pages/work/${file}.md`]();
       const data = (await content) as {
         frontmatter: T;
         file: string;
@@ -102,20 +104,10 @@ export const generateSourceUrl = (
   return `${GLOBAL.rootUrl}/${contentType}/${sourceUrl}`;
 };
 
-
-export const sortByCustomDate = (a: CustomDate, b: CustomDate): number => {
-  const months = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+export function displayQuote() {
+  const Quotes = [
+    "<div>To do a thing today, and the same tomorrow<br>Gathering is the essence of knowledge<br>Thus one may achieve wisdom<br>For streams are but the gatherings of drops</div>"
   ];
-
-  if (a.year !== b.year) {
-    return b.year - a.year;
-  }
-  
-  if (a.month !== b.month) {
-    return months.indexOf(b.month) - months.indexOf(a.month);
-  }
-
-  return b.day - a.day;
-};
+  const index = Math.floor(Math.random() * Quotes.length);
+  return Quotes[index];
+}
