@@ -23,38 +23,38 @@ export const processContentInDir = async <T extends object, K>(
   dir: string = process.cwd(),
 ) => {
   const files = await fs.readdir(dir + `/src/pages/${contentType}`);
-  
+
   const markdownFiles = files
-    .filter((file: string) => file.endsWith(".md"))
+    .filter((file: string) => file.endsWith(".mdx"))
     .map((file) => file.split(".")[0]);
 
   const readMdFileContent = async (file: string) => {
     if (contentType === "projects") {
       const content = import.meta
-        .glob(`/src/pages/projects/*.md`)
-      [`/src/pages/projects/${file}.md`]();
+        .glob(`/src/pages/projects/*.{md,mdx}`)
+      [`/src/pages/projects/${file}.mdx`]();
       const data = (await content) as {
         frontmatter: T;
         file: string;
         url: string;
       };
       return processFn(data);
-    } 
+    }
     else if (contentType === "blog") {
       const content = import.meta
-        .glob(`/src/pages/blog/*.md`)
-      [`/src/pages/blog/${file}.md`]();
+        .glob(`/src/pages/blog/*.{md,mdx}`)
+      [`/src/pages/blog/${file}.mdx`]();
       const data = (await content) as {
         frontmatter: T;
         file: string;
         url: string;
       };
       return processFn(data);
-    } 
+    }
     else if (contentType === "work") {
       const content = import.meta
-        .glob(`/src/pages/work/*.md`)
-      [`/src/pages/work/${file}.md`]();
+        .glob(`/src/pages/work/*.{md,mdx}`)
+      [`/src/pages/work/${file}.mdx`]();
       const data = (await content) as {
         frontmatter: T;
         file: string;
@@ -73,9 +73,15 @@ export const processContentInDir = async <T extends object, K>(
  * @returns a shortened version of the content
  */
 export const getShortDescription = (content: string, maxLength = 20) => {
-  const splitByWord = content.split(" ");
-  const length = splitByWord.length;
-  return length > maxLength ? splitByWord.slice(0, maxLength).join(" ") + "..." : content;
+  try {
+    const splitByWord = content.split(" ");
+    const length = splitByWord.length;
+    return length > maxLength ? splitByWord.slice(0, maxLength).join(" ") + "..." : content;
+  } catch (error) {
+    console.error("Error splitting content:", error);
+    return content;
+  }
+
 };
 
 /**

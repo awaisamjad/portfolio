@@ -6,8 +6,6 @@ tags?: [array of strings]
 time?: number
 featured: boolean
 liveUrl?: string
-day: string
-month: string
-year: number
+timestamp: string
 filename: string
 ---

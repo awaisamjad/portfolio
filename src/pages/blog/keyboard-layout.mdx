@@ -1,0 +1,29 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: My Keyboard Layout
+description: Changing my standard keyboard layout making it more ergonomic for programming
+tags: ["Neovim", "Vim Motions"]
+time: 2
+featured: true
+timestamp: 2025-05-18T02:39:03Z
+filename: keyboard-layout
+---
+import KeyboardBefore from '../../components/keyboard/Before.astro';
+import KeyboardAfter from '../../components/keyboard/After.astro';
+
+
+I've started to use Neovim as my main editor, switching from VSCode and so I decided that changing my keyboard layout would help with ergonomics
+
+This is what my layout looked like before
+
+<KeyboardBefore/>
+
+And this is what I've changed it to
+
+<KeyboardAfter/>
+
+I've switched my **CAPS LOCK** key with **ESC** as I can simply use my left pinkie to press it rather than stretching my finger all the way to the top left corner of the keyboard. I also never use **CAPS LOCK** and instead just hold **SHIFT** so its pretty much useless to me.
+
+Next I switched my **RIGHT-CTRL** with my **RIGHT-ALT** so I can use my right thumb to press **CTRL** and left thumb **ALT**. This keeps my thumbs on the bottom row and the rest of my fingers on the home row. I would also map BACKSPACE to **RIGHT-WINDOWS** but can't find a way to do that on Wayland or X11.
+
+This works well for my desktop setup with sway as I use my **WINDOWS** for window movement then **CTRL** and **ALT** for window specific movement. [Check out more about my desktop setup here](/blog/linux-setup)
