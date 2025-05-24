@@ -36,7 +36,9 @@ import { articles } from "../../lib/list";
     </div>
     <ul>
       {
-        articles.map((articles) => (
+        articles
+        .filter((article) => !article.draft)
+        .map((articles) => (
           <li>
             <ArticleSnippet
               title={articles.title}

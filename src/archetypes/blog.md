@@ -8,4 +8,5 @@ featured: boolean
 liveUrl?: string
 timestamp: string
 filename: string
+draft?: boolean
 ---

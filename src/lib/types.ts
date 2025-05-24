@@ -65,10 +65,13 @@ export type BlogFrontmatter = {
    */
   time?: number;
 
+  draft?: boolean;
+
   /**
    * Whether the article should be featured on the homepage
    */
   featured: boolean;
+
 
   timestamp: string;
   

@@ -1,8 +1,8 @@
-import type { BlogFrontMatter, ProjectFrontmatter, WorkFrontmatter } from "./types";
+import type { BlogFrontmatter, ProjectFrontmatter, WorkFrontmatter } from "./types";
 import { getShortDescription, processContentInDir } from "./utils";
 
 export const articles = (
-  await processContentInDir<BlogFrontMatter, BlogFrontMatter>(
+  await processContentInDir<BlogFrontmatter, BlogFrontmatter>(
     "blog",
     (data) => {
       const shortDescription = getShortDescription(
@@ -16,6 +16,7 @@ export const articles = (
         featured: data.frontmatter.featured,
         timestamp: data.frontmatter.timestamp,
         filename: `/blog/${data.frontmatter.filename}`,
+        draft: data.frontmatter.draft,
       };
     },
   )

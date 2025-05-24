@@ -1,5 +1,5 @@
 import type { BlogFrontmatter, ProjectFrontmatter, WorkFrontmatter } from "./types";
-import { getShortDescription, processContentInDir, sortByCustomDate } from "./utils";
+import { getShortDescription, processContentInDir } from "./utils";
 
 export const featuredProjects = (
   await processContentInDir<ProjectFrontmatter, ProjectFrontmatter>(

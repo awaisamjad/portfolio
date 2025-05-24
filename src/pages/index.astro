@@ -31,13 +31,18 @@ import List from "../components/List.astro";
         class="text-3xl sm:text-4xl font-display font-semibold opsz text-left"
       >
         {GLOBAL.username}
-      </h1>
-      <List
-        items={[
-          "Incoming Graduate Software Developer",
-          "Design, Innovative and Creative Engineering Graduate from QMUL",
-        ]}
-      />
+</h1>
+
+      <ul class="mt-2 space-y-1 text-black dark:text-white list-disc">
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Incoming Graduate Software Engineer @ PA Consulting</span>
+        </li>
+        <li class="flex items-center text-lg">
+          <span class="mr-2">•</span>
+          <span>Design, Innovative and Creative Engineering Gradute from QMUL</span>
+        </li>
+    </ul>
     </div>
   </Section>
   <Section>
@@ -78,6 +83,7 @@ import List from "../components/List.astro";
       </ul>
     </div>
   </Section>
+  <p>Read more about what I'm currently learning and why <a href="/blog/what-i'm-currently-learning-and-why" class="text-blue-300 underline">here</a></p>
   <Section>
     <FeaturedProjects featuredProjects={featuredProjects} />
   </Section>
