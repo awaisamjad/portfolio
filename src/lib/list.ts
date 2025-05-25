@@ -12,7 +12,6 @@ export const articles = (
         title: data.frontmatter.title,
         description: shortDescription,
         tags: data.frontmatter.tags,
-        time: data.frontmatter.time,
         featured: data.frontmatter.featured,
         timestamp: data.frontmatter.timestamp,
         filename: `/blog/${data.frontmatter.filename}`,
@@ -42,6 +41,7 @@ export const projects = (
         featured: data.frontmatter.featured,
         timestamp: data.frontmatter.timestamp,
         filename: `/projects/${data.frontmatter.filename}`,
+        status: data.frontmatter.status,
       };
     },
   )

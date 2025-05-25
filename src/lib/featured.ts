@@ -17,6 +17,7 @@ export const featuredProjects = (
         featured: data.frontmatter.featured,
         timestamp: data.frontmatter.timestamp,
         filename: `/projects/${data.frontmatter.filename}`,
+        status: data.frontmatter.status,
       };
     },
   )

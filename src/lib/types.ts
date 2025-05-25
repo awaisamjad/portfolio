@@ -41,6 +41,12 @@ export type ProjectFrontmatter = {
    * (eg. https://zaggonaut.dev/projects/my-project)
    */
   filename: string;
+  
+  /**
+   * The current status of the project
+   * (eg. "Active", "Completed", "Paused", "Dropped")
+   */
+  status?: "Active" | "Completed" | "Paused" | "Dropped";
 };
 
 export type BlogFrontmatter = {
@@ -59,11 +65,6 @@ export type BlogFrontmatter = {
    * (eg. ["JavaScript", "React", "Node.js"])
    */
   tags?: string[];
-
-  /**
-   * The estimated time to read the article in minutes
-   */
-  time?: number;
 
   draft?: boolean;
 

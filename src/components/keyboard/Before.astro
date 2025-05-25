@@ -1,160 +1,91 @@
-<div class="flex flex-col max-w-[900px] font-sans items-center">
+<div class="flex flex-col max-w-[900px] font-sans items-center mx-auto">
     <!-- F1-F12 Row -->
-    <div class="flex mb-2">
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f1"
-        >
-            F1
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f2"
-        >
-            F2
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f3"
-        >
-            F3
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f4"
-        >
-            F4
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f5"
-        >
-            F5
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f6"
-        >
-            F6
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f7"
-        >
-            F7
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f8"
-        >
-            F8
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f9"
-        >
-            F9
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f10"
-        >
-            F10
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f11"
-        >
-            F11
-        </div>
-        <div
-            class="h-10 w-10 bg-gray-200 rounded text-center leading-10 m-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
-            id="f12"
-        >
-            F12
-        </div>
+    <div class="flex mb-2 flex-wrap md:flex-nowrap justify-center">
+        {["ESC", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"].map((key) => (
+            <div
+                class="h-4 w-4 md:h-12 md:w-12 bg-gray-200 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
+                id={key.toLowerCase()}
+            >
+                {key}
+            </div>
+        ))}
     </div>
 
     <!-- Number Row -->
-    <div class="flex">
+    <div class="flex flex-wrap md:flex-nowrap justify-center">
+        
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
-            id="esc"
-        >
-            ESC
-        </div>
-        <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="1"
         >
             1
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="2"
         >
             2
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="3"
         >
             3
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="4"
         >
             4
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="5"
         >
             5
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="6"
         >
             6
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="7"
         >
             7
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="8"
         >
             8
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="9"
         >
             9
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="10"
         >
             0
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             -
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             +
         </div>
         <div
-            class="h-12 w-20 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-8 md:h-14 md:w-24 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="back"
         >
             BACK
@@ -162,164 +93,164 @@
     </div>
 
     <!-- QWERTY Row -->
-    <div class="flex">
+    <div class="flex flex-wrap md:flex-nowrap justify-center">
         <div
-            class="h-12 w-20 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-10 md:h-14 md:w-20 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="tab"
         >
             TAB
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="Q"
         >
             Q
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="W"
         >
             W
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="E"
         >
             E
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="R"
         >
             R
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="T"
         >
             T
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="Y"
         >
             Y
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="U"
         >
             U
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="I"
         >
             I
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="O"
         >
             O
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="P"
         >
             P
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             [
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             ]
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             \
         </div>
     </div>
 
     <!-- ASDF Row -->
-    <div class="flex">
+    <div class="flex flex-wrap md:flex-nowrap justify-center">
         <div
-            class="h-12 w-24 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-10 md:h-14 md:w-20 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-400"
             id="caps"
         >
             CAPS
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="A"
         >
             A
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="S"
         >
             S
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="D"
         >
             D
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="F"
         >
             F
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="G"
         >
             G
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="H"
         >
             H
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="J"
         >
             J
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="K"
         >
             K
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="L"
         >
             L
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             :
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             ''
         </div>
         <div
-            class="h-12 w-24 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-10 md:h-14 md:w-20 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="enter"
         >
             ENTER
@@ -327,72 +258,72 @@
     </div>
 
     <!-- ZXCV Row -->
-    <div class="flex">
+    <div class="flex flex-wrap md:flex-nowrap justify-center">
         <div
-            class="h-12 w-32 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-10 md:h-14 md:w-24 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="left-shift"
         >
             SHIFT
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="Z"
         >
             Z
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="X"
         >
             X
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="C"
         >
             C
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="V"
         >
             V
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="B"
         >
             B
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="N"
         >
             N
         </div>
         <div
-            class="h-12 w-12 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
             id="M"
         >
             M
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             ,
         </div>
         <div
-            class="h-12 w-12 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             .
         </div>
         <div
-            class="h-12 w-12 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-4 md:h-14 md:w-14 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             ;
         </div>
         <div
-            class="h-12 w-32 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-10 md:h-14 md:w-24 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
             id="right-shift"
         >
             SHIFT
@@ -400,49 +331,39 @@
     </div>
 
     <!-- Bottom Row -->
-    <div class="flex">
+    <div class="flex flex-wrap md:flex-nowrap justify-center">
         <div
-            class="h-12 w-16 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-8 md:h-14 md:w-16 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             CTRL
         </div>
         <div
-            class="h-12 w-16 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-8 md:h-14 md:w-16 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             WIN
         </div>
         <div
-            class="h-12 w-16 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-8 md:h-14 md:w-16 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             ALT
         </div>
         <div
-            class="h-12 w-64 bg-gray-500 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-600"
+            class="h-4 w-16 md:h-14 md:w-64 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-600"
         >
             SPACE
         </div>
         <div
-            class="h-12 w-16 bg-gray-400 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-500"
+            class="h-4 w-8 md:h-14 md:w-16 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-400"
         >
             ALT
         </div>
         <div
-            class="h-12 w-16 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-8 md:h-14 md:w-16 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300"
         >
             WIN
         </div>
         <div
-            class="h-12 w-16 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
-        >
-            FN
-        </div>
-        <div
-            class="h-12 w-16 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
-        >
-            MENU
-        </div>
-        <div
-            class="h-12 w-16 bg-gray-300 rounded text-center leading-12 m-1 text-gray-700 transition-colors duration-300 hover:bg-gray-400"
+            class="h-4 w-8 md:h-14 md:w-16 bg-gray-300 rounded text-center flex items-center justify-center m-0.5 md:m-1 text-[6px] md:text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-400"
         >
             CTRL
         </div>

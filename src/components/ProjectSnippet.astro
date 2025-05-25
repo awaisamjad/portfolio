@@ -8,16 +8,32 @@ export type Props = {
   githubUrl?: string;
   liveUrl?: string;
   tags: string[];
+  status?: "Active" | "Completed" | "Paused" | "Dropped";
 };
 
-const { title, description, url, githubUrl, liveUrl, tags } = Astro.props;
+const { title, description, url, githubUrl, liveUrl, tags, status } = Astro.props;
+
+// Define status colors
+const statusColors = {
+  "Active": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
+  "Completed": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
+  "Paused": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
+  "Dropped": "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300",
+};
 ---
 
 <div class="flex flex-col gap-3 pb-8">
   <div class="flex flex-col gap-3 sm:flex-row sm:justify-between">
-    <Anchor url={url} class="text-xl">
-      {title}
-    </Anchor>
+    <div class="flex flex-wrap items-center gap-2">
+      <Anchor url={url} class="text-xl">
+        {title}
+      </Anchor>
+      {status && (
+        <span class={`px-2 py-1 text-xs font-medium rounded-full ${statusColors[status]}`}>
+          {status}
+        </span>
+      )}
+    </div>
     <div class="flex gap-2">
       {
         githubUrl ? (
@@ -41,7 +57,7 @@ const { title, description, url, githubUrl, liveUrl, tags } = Astro.props;
   <div class="flex flex-row flex-wrap gap-2">
     {
       tags.map((tag) => (
-        <span class="-zag-text -bg  px-2 py-1 text-sm font-semibold">
+        <span class="-zag-text -bg px-2 py-1 text-sm font-semibold">
           {tag}
         </span>
       ))

@@ -1,0 +1,66 @@
+---
+interface Props {
+  headings: {
+    depth: number;
+    slug: string;
+    text: string;
+  }[];
+}
+
+const { headings } = Astro.props;
+
+// Filter out headings that are too deep
+const filteredHeadings = headings.filter((heading) => heading.depth <= 3);
+
+// Group headings by their depth
+const tableOfContents = filteredHeadings.map((heading) => {
+  return {
+    ...heading,
+    children: [],
+  };
+});
+---
+
+<nav class="border-l-2 pl-4 mb-8">
+    <details class="md:hidden">
+        <summary class="text-lg font-medium mb-2 cursor-pointer">Table of Contents</summary>
+        <ul class="space-y-2 pl-2 mt-2">
+            {
+                tableOfContents.map((heading) => (
+                    <li class={`ml-${(heading.depth - 1) * 4}`}>
+                        <a
+                            href={`#${heading.slug}`}
+                            class={`hover:underline inline-block transition-colors underline-offset-4 ${
+                                heading.depth === 1 ? 'text-base font-medium' : 
+                                heading.depth === 2 ? 'text-sm ml-3' : 'text-xs ml-6'
+                            }`}
+                        >
+                            {heading.text}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </details>
+    
+    <div class="hidden md:block">
+        <h2 class="text-lg font-medium mb-4">Table of Contents</h2>
+        <ul class="space-y-2">
+            {
+                tableOfContents.map((heading) => (
+                    <li class={`ml-${(heading.depth - 1) * 4}`}>
+                        <a
+                            href={`#${heading.slug}`}
+                            class={`hover:underline inline-block transition-colors underline-offset-4 ${
+                                heading.depth === 1 ? 'text-base font-medium' : 
+                                heading.depth === 2 ? 'text-sm ml-3' : 'text-xs ml-6'
+                            }`}
+                        >
+                            {heading.text}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</nav>

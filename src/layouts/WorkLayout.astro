@@ -11,10 +11,11 @@ import Layout from "./Layout.astro";
 import Section from "../components/common/Section.astro";
 import Anchor from "../components/common/Anchor.astro";
 import { GLOBAL } from "../lib/variables";
+import TableOfContents from "../components/TableOfContents.astro";
 
 type Props = MarkdownLayoutProps<WorkFrontmatter>;
 
-const { frontmatter } = Astro.props;
+const { frontmatter, headings } = Astro.props;
 const date = processArticleDate(frontmatter.timestamp);
 const shortDescription = getShortDescription(frontmatter.description);
 const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
@@ -36,7 +37,7 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
   </Fragment>
   <Section class="mt-8">
     <div class="flex flex-col gap-4 mt-8 mb-16">
-      <h1 class="text-3xl sm:text-4xl leading-tight font-display">
+      <h1 class="text-3xl sm:text-4xl leading-tight">
         {frontmatter.title}
       </h1>
       <div class="flex justify-between">
@@ -46,7 +47,7 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
         {
           frontmatter.tags
             ? frontmatter.tags.map((tag) => (
-                <span class="-zag-text -bg  font-semibold py-1 px-2">
+                <span class="-zag-text -bg font-semibold py-1 px-2">
                   {tag}
                 </span>
               ))
@@ -63,8 +64,21 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "work");
         }
       </div>
     </div>
-    <Prose>
-      <slot />
-    </Prose>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+      <div class="w-full lg:w-3/4">
+        <Prose>
+          <slot />
+        </Prose>
+      </div>
+      
+      {headings.length > 0 && (
+        <div class="w-full lg:w-1/4 order-first lg:order-last">
+          <div class="sticky top-24">
+            <TableOfContents headings={headings} />
+          </div>
+        </div>
+      )}
+    </div>
   </Section>
 </Layout>

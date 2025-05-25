@@ -1,12 +1,9 @@
 ---
-import { GLOBAL } from "../lib/variables";
 import { displayQuote } from "../lib/utils";
 import Section from "./common/Section.astro";
-const date = new Date();
-const year = date.getFullYear();
 ---
 
-<footer class="mt-16 mb-4 border-t-2 flex flex-col items-center">
+<footer class="mt-16 mb-4 flex flex-col items-center">
   <Section class="mb-4 flex flex-col italic items-center justify-center">
     <div set:html={displayQuote()}></div>
   </Section>

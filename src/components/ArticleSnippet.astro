@@ -24,6 +24,5 @@ const { title, description, url, duration, timestamp } = Astro.props;
     class="zag-muted flex justify-between items-center"
   >
     {timestamp ? <p>{processArticleDate(timestamp)}</p> : null}
-    {duration ? <p>{duration}</p> : null}
   </div>
 </div>
