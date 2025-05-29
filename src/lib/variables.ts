@@ -6,6 +6,7 @@ export const GLOBAL = {
   rootUrl: "https://awaisamjad.dev",
   shortDescription: "Awais Amjad's Website",
   longDescription: "My website where you can find my latest projects, blog posts and experiences",
+  email: "awais@awaisamjad.dev",
   
   // Social media links
   githubProfile: "https://github.com/awaisamjad",

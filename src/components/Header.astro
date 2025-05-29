@@ -57,22 +57,43 @@ import ThemeToggle from "./ThemeToggle.astro";
       {
         GLOBAL.linkedinProfile && (
           <Anchor
-            url={GLOBAL.linkedinProfile}
-            aria-label="LinkedIn Profile"
-            external
+        url={GLOBAL.linkedinProfile}
+        aria-label="LinkedIn Profile"
+        external
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-            >
-              <path
-                class="zag-fill "
-                fill="currentColor"
-                d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.12 19h-3.08v-9h3.08v9zm-1.54-10.29c-.99 0-1.79-.8-1.79-1.79s.8-1.79 1.79-1.79 1.79.8 1.79 1.79-.8 1.79-1.79 1.79zm13.16 10.29h-3.08v-4.89c0-1.16-.02-2.64-1.61-2.64s-1.86 1.26-1.86 2.57v4.96h-3.08v-9h2.96v1.23h.04c.41-.78 1.4-1.6 2.88-1.6 3.08 0 3.65 2.03 3.65 4.66v4.71z"
-              />
-            </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+        >
+          <path
+            class="zag-fill "
+            fill="currentColor"
+            d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.12 19h-3.08v-9h3.08v9zm-1.54-10.29c-.99 0-1.79-.8-1.79-1.79s.8-1.79 1.79-1.79 1.79.8 1.79 1.79-.8 1.79-1.79 1.79zm13.16 10.29h-3.08v-4.89c0-1.16-.02-2.64-1.61-2.64s-1.86 1.26-1.86 2.57v4.96h-3.08v-9h2.96v1.23h.04c.41-.78 1.4-1.6 2.88-1.6 3.08 0 3.65 2.03 3.65 4.66v4.71z"
+          />
+        </svg>
+          </Anchor>
+        )
+      }
+      {
+        GLOBAL.email && (
+          <Anchor
+        url={`mailto:${GLOBAL.email}`}
+        aria-label="Send Email"
+        external
+          >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="32" 
+          height="32" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            class="zag-fill"
+            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+          />
+        </svg>
           </Anchor>
         )
       }
