@@ -43,21 +43,23 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "blog");
         <span>{date}</span>
       </div>
     </div>
-    
+
     <div class="flex flex-col lg:flex-row gap-8">
       <div class="w-full lg:w-3/4">
         <Prose>
           <slot />
         </Prose>
       </div>
-      
-      {headings.length > 0 && (
-        <div class="w-full lg:w-1/4 order-first lg:order-last">
-          <div class="sticky top-24">
-            <TableOfContents headings={headings} />
+
+      {
+        headings.length > 0 && (
+          <div class="w-full lg:w-1/4 order-first lg:order-last">
+            <div class="sticky top-24">
+              <TableOfContents headings={headings} />
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
     </div>
   </Section>
 </Layout>

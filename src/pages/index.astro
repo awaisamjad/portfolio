@@ -2,16 +2,12 @@
 import {
   featuredArticles,
   featuredProjects,
-  featuredWork,
 } from "../lib/featured";
 import { GLOBAL } from "../lib/variables";
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/common/Section.astro";
 import FeaturedProjects from "../components/home/FeaturedProjects.astro";
 import FeaturedArticles from "../components/home/FeaturedArticles.astro";
-import FeaturedWork from "../components/home/FeaturedWork.astro";
-import Keyboard from "../components/Keyboard.astro";
-import List from "../components/List.astro";
 ---
 
 <Layout>
@@ -24,14 +20,29 @@ import List from "../components/List.astro";
     <meta http-equiv="content-language" content="en" />
     <meta name="language" content="English" />
     <link rel="canonical" href={GLOBAL.rootUrl} />
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="awaisamjad/portfolio"
+      data-repo-id="R_kgDOMpuRUQ"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOMpuRUc4Cq5M8"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="dark"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
   </Fragment>
   <Section class="mt-4">
     <div class="flex flex-col">
-      <h1
-        class="text-3xl sm:text-4xl  font-semibold opsz text-left"
-      >
+      <h1 class="text-3xl sm:text-4xl font-semibold opsz text-left">
         {GLOBAL.username}
-</h1>
+      </h1>
 
       <ul class="mt-2 space-y-1 text-black dark:text-white list-disc">
         <li class="flex items-center text-lg">
@@ -40,9 +51,11 @@ import List from "../components/List.astro";
         </li>
         <li class="flex items-center text-lg">
           <span class="mr-2">•</span>
-          <span>Design, Innovative and Creative Engineering Gradute from QMUL</span>
+          <span
+            >Design, Innovative and Creative Engineering Gradute from QMUL</span
+          >
         </li>
-    </ul>
+      </ul>
     </div>
   </Section>
   <Section>
@@ -82,7 +95,11 @@ import List from "../components/List.astro";
         </li>
       </ul>
     </div>
-  <p>Read more about what I'm currently learning and why <a href="/blog/what-i'm-currently-learning-and-why" class="text-blue-400 underline">here</a></p>
+    <p>
+      Read more about what I'm currently learning and why <a
+        href="/blog/what-i'm-currently-learning-and-why"
+        class="text-blue-400 underline">here</a>
+    </p>
   </Section>
   <Section>
     <FeaturedProjects featuredProjects={featuredProjects} />
