@@ -13,17 +13,6 @@ import "@fontsource-variable/jetbrains-mono";
     <link rel="icon" href="/images/luffy.webp" />
     <meta name="generator" content={Astro.generator} />
    
-    <!-- Cronitor RUM -->
-    <script async src="https://rum.cronitor.io/script.js"></script>
-    <script>
-      window.cronitor =
-        window.cronitor ||
-        function () {
-          (window.cronitor.q = window.cronitor.q || []).push(arguments);
-        };
-      cronitor("config", { clientKey: "469803078db254f89302af54e35dcfb4" });
-    </script>
-
     <slot name="head" />
   </head>
   <body class="bg zag-text">
