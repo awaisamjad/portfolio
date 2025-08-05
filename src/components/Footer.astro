@@ -3,8 +3,8 @@ import { displayQuote } from "../lib/utils";
 import Section from "./common/Section.astro";
 ---
 
-<footer class="mt-16 mb-4 flex flex-col items-center">
-  <Section class="mb-4 flex flex-col italic items-center justify-center">
-    <div set:html={displayQuote()}></div>
+<footer class="mt-36 flex flex-col items-center border-t-2">
+  <Section class="mt-10 flex flex-col italic items-center justify-center">
+    <div set:html={displayQuote()} />
   </Section>
 </footer>

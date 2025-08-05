@@ -1,0 +1,30 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: How I'm hosting this website 
+description: 
+tags: ["Self-host", "Hetzner"]
+featured: false
+timestamp: 2025-07-26T02:39:03Z
+filename: how-im-hosting-this-site 
+draft: false
+---
+
+I bought a server from Hetzner and a domain from Name.com. I updated the DNS records to point to my server's IP.
+
+I use astro as my framework
+
+To generate the HTML, CSS and JS files run:  
+```bash
+pnpm build
+```
+This generates a ./dist folder with the files.
+
+To upload the site, I use rsync to sync only the changed files. Example:
+```bash
+rsync -azP --delete ./dist/ username@255.255.255.255:/home/username/website
+```
+I originally used nginx as my HTTP server, but now I use [Volk](/projects/volk), a server I built myself. It's basic but functional, and I plan to improve it over time.
+
+Nginx is still running, but only as a reverse proxy. Volk runs on port 6543, while nginx listens on port 80 and forwards incoming traffic to Volk. This avoids having to reconfigure Volk for port 80.
+
+I also want to build my own site generator or JS framework and rebuild the site using that, and maybe even use a home server to host it.

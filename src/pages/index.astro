@@ -20,23 +20,6 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
     <meta http-equiv="content-language" content="en" />
     <meta name="language" content="English" />
     <link rel="canonical" href={GLOBAL.rootUrl} />
-    <script
-      src="https://giscus.app/client.js"
-      data-repo="awaisamjad/portfolio"
-      data-repo-id="R_kgDOMpuRUQ"
-      data-category="Announcements"
-      data-category-id="DIC_kwDOMpuRUc4Cq5M8"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="dark"
-      data-lang="en"
-      data-loading="lazy"
-      crossorigin="anonymous"
-      async
-    ></script>
   </Fragment>
   <Section class="mt-4">
     <div class="flex flex-col">
@@ -101,6 +84,7 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
         class="text-blue-400 underline">here</a>
     </p>
   </Section>
+  <a class=" text-blue-400" href="/blog/how-im-hosting-this-site">Check how I made this website</a>
   <Section>
     <FeaturedProjects featuredProjects={featuredProjects} />
   </Section>
